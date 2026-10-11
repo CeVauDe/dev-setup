@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# newkata — stamp out a fresh code-retreat kata with Copier.
+set -euo pipefail
+
+here="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+TEMPLATE="${KATA_TEMPLATE:-$here/kata-template}"
+dest="${1:-kata-$(date +%Y%m%d-%H%M%S)}"
+shift || true
+
+if ! command -v copier >/dev/null 2>&1; then
+  echo "error: copier not found. Install it with:  pipx install copier" >&2
+  exit 1
+fi
+
+# --trust is required because the template runs post-copy tasks (git init).
+exec copier copy --trust "$TEMPLATE" "$dest" "$@"

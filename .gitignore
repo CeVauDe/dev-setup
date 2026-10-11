@@ -1,0 +1,3 @@
+# kata-template is a standalone git repo (kept separate so Copier can use its
+# version tags for `copier update`). The outer workspace does not track it.
+code-retreat/kata-template/
