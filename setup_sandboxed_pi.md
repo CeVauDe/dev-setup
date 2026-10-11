@@ -79,7 +79,7 @@ exec msb run -t --name pi-demo --replace \
     apt-get update &&
     apt-get install -y --no-install-recommends ca-certificates git ripgrep &&
     npm install -g --ignore-scripts @earendil-works/pi-coding-agent@1.1.0 &&
-    exec pi
+    exec pi --model openrouter/deepseek/deepseek-v4.1-flash
   '
 ```
 
