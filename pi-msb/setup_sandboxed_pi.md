@@ -12,7 +12,7 @@ This folder contains:
 
 ## What this sets up
 
-- A locally built `pi-msb:latest` image containing `ca-certificates`, `git`, `ripgrep`, and Pi.
+- A locally built `pi-msb:latest` image containing `ca-certificates`, `curl`, `git`, `ripgrep`, `uv` (latest), Python 3.14 (uv-managed, also on PATH as `python`/`python3`/`python3.14`), and Pi.
 - The host project directory mounted at `/workspace` (read-write).
 - Pi's agent directory (`config`, `auth`, and **sessions**) persisted to the host at `~/.pi/msb-agent`.
 - The OpenRouter key resolved from Proton Pass on demand, never written to disk, shell history, or the command line.
